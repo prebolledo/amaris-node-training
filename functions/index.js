@@ -40,23 +40,24 @@ let name = 'Pablo'
 console.log(name.toLowerCase())
 
 
-Array.prototype.ordenar = (arr) => {
+//En prototipos no sirve la asignación de funciones arrow
+//Dado que las funciones arrow abren el scoupe de this
+Array.prototype.ordenar = function() {
     let aux
-    //let arr = this
-    for(let j=0; j< arr.length; j++){
-        for(let k=j+1; k< arr.length; k++){
-            if(arr[j] > arr[k]){
-                aux = arr[j]
-                arr[j] = arr[k]
-                arr[k] = aux
+    for(let j=0; j< this.length; j++){
+        for(let k=j+1; k< this.length; k++){
+            if(this[j] > this[k]){
+                aux = this[j]
+                this[j] = this[k]
+                this[k] = aux
             }
         }
-    }
-    console.log('ordenar')
-    return arr    
+    }    
+    return this
 }
 
-console.log([].ordenar([1,2,3]))
+console.log([4,5,1,2].ordenar())
+
 console.log(
     [1,2,3].sort((a,b) => {
         return a < b ? 0 : -1
