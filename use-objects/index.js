@@ -15,3 +15,8 @@ let person = {
 let {...person2} = person
 person2.setName('X')
 console.log(person)
+
+//Destructuracion de Objectos
+
+let {name} = person
+console.log(name)

@@ -38,3 +38,43 @@ console.log(arr([2,8]))
 
 let name = 'Pablo'
 console.log(name.toLowerCase())
+
+
+Array.prototype.ordenar = (arr) => {
+    let aux
+    //let arr = this
+    for(let j=0; j< arr.length; j++){
+        for(let k=j+1; k< arr.length; k++){
+            if(arr[j] > arr[k]){
+                aux = arr[j]
+                arr[j] = arr[k]
+                arr[k] = aux
+            }
+        }
+    }
+    console.log('ordenar')
+    return arr    
+}
+
+console.log([].ordenar([1,2,3]))
+console.log(
+    [1,2,3].sort((a,b) => {
+        return a < b ? 0 : -1
+    })
+)
+
+const ordenar = (arr) =>{
+    let aux
+    for(let j=0; j< arr.length; j++){
+        for(let k=j+1; k< arr.length; k++){
+            if(arr[j] > arr[k]){
+                aux = arr[j]
+                arr[j] = arr[k]
+                arr[k] = aux
+            }
+        }
+    }
+    return arr
+} 
+
+console.log(ordenar([1,6,8,2]))
