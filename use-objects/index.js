@@ -1,4 +1,4 @@
-let person = {
+const person = {
     name:'Pablo',
     lastName:'Rebolledo',
     age:35,
@@ -12,11 +12,9 @@ let person = {
     }
 }
 
-let {...person2} = person
-person2.setName('X')
+const {...personTwo} = person
+personTwo.setName('Other Name')
+console.log(personTwo)
 console.log(person)
 
-//Destructuracion de Objectos
 
-let {name} = person
-console.log(name)

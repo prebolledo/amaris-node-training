@@ -1,0 +1,49 @@
+
+//Promises
+
+const promise = new Promise((resolve, reject) => {
+    console.log('dentro de la promesa')
+    if(true){
+        let clarTimeOutData = setTimeout(()=>{
+            resolve({name:'Pablo'})
+            clearTimeout(clarTimeOutData)
+        },5000)
+    }else{
+        reject("error")
+    }
+})
+
+{
+    const x = async ()=>{
+        console.log('esperando promesa')
+        await promise.then((result)=>{
+            console.log('ok promesa')
+            console.log(result)
+        },(err)=>{
+            console.log(err)
+        })
+        console.log('haciendo otra cosa...')
+    }
+    x()
+    console.log('test')    
+}
+
+//node-fetch
+
+const fetch = require('node-fetch');
+
+console.log('Api')
+
+{
+    const getApi = async () => {
+        const data = await (async () => {
+            return await fetch('https://jsonplaceholder.typicode.com/comments')
+                .then(resp => resp.json())
+        })()
+
+        console.log(data[0])
+        console.log('end test api')        
+    }
+
+    getApi()
+}
