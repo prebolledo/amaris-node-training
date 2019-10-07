@@ -13,6 +13,7 @@ const person = {
 }
 
 const {...personTwo} = person
+const {name} = person
 personTwo.setName('Other Name')
 console.log(personTwo)
 console.log(person)

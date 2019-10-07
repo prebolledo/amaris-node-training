@@ -1,7 +1,19 @@
 const test = () => {
     console.log('test')
 }
+const id = 1
 
-export default{
-    test
+const sumar = (a, b) => {
+    console.log( a+b )
 }
+
+export { id , test}
+
+export default {
+    sumar,
+}
+/*
+export default (a, b) => {
+    console.log( a+b )
+}
+*/
